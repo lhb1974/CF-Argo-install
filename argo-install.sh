@@ -1,9 +1,41 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# ======================================================
+# install-argo.sh
+# Cloudflare Tunnel 多域名自动安装脚本 (支持 WS/gRPC/TCP)
+# 作者：数字套利 by AM 
+# ======================================================
+
+die(){ echo "✖ $*" >&2; exit 1; }
+info(){ echo "→ $*"; }
+
+# 是否 root
+IS_ROOT=false
+if [ "$(id -u)" -eq 0 ]; then
+  IS_ROOT=true
+fi
+
+# 定义颜色
+red='\033[0;31m'
+green='\033[0;32m'
+yellow='\033[1;33m'
+blue='\033[1;34m'
+cyan='\033[1;36m'
+bold='\033[1m'
+re='\033[0m'
+
+clear
 echo -e "${cyan}"
 echo "╔══════════════════════════════════════════╗"
-echo "║       Cloudflare Argo 安装器              ║"
+echo "║   🚀 数字套利 Cloudflare Argo 安装器        ║"
 echo "╚══════════════════════════════════════════╝"
 echo -e "${re}"
 
+printf "%-18s ${yellow}%s${re}\n"  "${green}📺 YouTube频道："   "https://youtube.com/@am_clubs"
+printf "%-18s ${yellow}%s${re}\n"  "${green}💬 TG交流群组："    "https://t.me/am_clubs"
+printf "%-18s ${yellow}%s${re}\n"  "${green}💻 GitHub仓库："    "https://github.com/amclubs"
+printf "%-18s ${yellow}%s${re}\n"  "${green}🌐 个人博客："      "https://amclubss.com"
 
 echo -e "${cyan}──────────────────────────────────────────${re}"
 
@@ -514,5 +546,3 @@ echo -e "$MAPPINGS" | while IFS=',' read -r DOMAIN PORT WS_PATH PROTO STREAM_TYP
 done
 echo "=========================================="
 echo
-
-
