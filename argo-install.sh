@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -euo pipefail
+#set -euo pipefail
 
 # ======================================================
 # install-argo.sh
@@ -541,3 +541,4 @@ echo -e "$MAPPINGS" | while IFS=',' read -r DOMAIN PORT WS_PATH PROTO STREAM_TYP
 done
 echo "=========================================="
 echo
+
