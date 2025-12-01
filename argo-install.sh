@@ -1,30 +1,3 @@
-#!/usr/bin/env bash
-#set -euo pipefail
-
-# ======================================================
-# install-argo.sh
-# Cloudflare Tunnel 多域名自动安装脚本 (支持 WS/gRPC/TCP)
-# ======================================================
-
-die(){ echo "✖ $*" >&2; exit 1; }
-info(){ echo "→ $*"; }
-
-# 是否 root
-IS_ROOT=false
-if [ "$(id -u)" -eq 0 ]; then
-  IS_ROOT=true
-fi
-
-# 定义颜色
-red='\033[0;31m'
-green='\033[0;32m'
-yellow='\033[1;33m'
-blue='\033[1;34m'
-cyan='\033[1;36m'
-bold='\033[1m'
-re='\033[0m'
-
-clear
 echo -e "${cyan}"
 echo "╔══════════════════════════════════════════╗"
 echo "║       Cloudflare Argo 安装器              ║"
@@ -541,4 +514,5 @@ echo -e "$MAPPINGS" | while IFS=',' read -r DOMAIN PORT WS_PATH PROTO STREAM_TYP
 done
 echo "=========================================="
 echo
+
 
